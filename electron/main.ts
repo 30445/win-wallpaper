@@ -1,9 +1,10 @@
 import { app, BrowserWindow } from 'electron'
-import { createRequire } from 'node:module'
+// import { createRequire } from 'node:module'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
+import {setWindowToWallpaper} from "./electron-utils/utils.ts";
 
-const require = createRequire(import.meta.url)
+// const require = createRequire(import.meta.url)
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // The built directory structure
@@ -45,6 +46,7 @@ function createWindow() {
     // win.loadFile('dist/index.html')
     win.loadFile(path.join(RENDERER_DIST, 'index.html'))
   }
+  setWindowToWallpaper(win)
 }
 
 // Quit when all windows are closed, except on macOS. There, it's common
