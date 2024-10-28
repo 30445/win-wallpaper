@@ -3,6 +3,7 @@ import { app, BrowserWindow } from 'electron'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import * as process from "process";
+import mainEventListeners from "./electron-utils/mainEventListeners.ts";
 
 // const require = createRequire(import.meta.url)
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -47,6 +48,8 @@ function createWindow() {
     win.loadFile(path.join(RENDERER_DIST, 'index.html'))
   }
   win.webContents.openDevTools()
+
+  mainEventListeners(win)
 }
 
 // Quit when all windows are closed, except on macOS. There, it's common
