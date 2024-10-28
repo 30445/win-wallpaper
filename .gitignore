@@ -25,3 +25,7 @@ dist-electron
 *.sw?
 
 
+components.d.ts
+auto-imports.d.ts
+
+
