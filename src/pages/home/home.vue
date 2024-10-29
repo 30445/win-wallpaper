@@ -2,7 +2,7 @@
   <div class="home">面板</div>
 </template>
 
-<script setup lang=ts>
+<script setup lang="ts">
 
 </script>
 

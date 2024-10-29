@@ -25,3 +25,9 @@ contextBridge.exposeInMainWorld('ipcRenderer', {
   // You can expose other APTs you need here.
   // ...
 })
+
+contextBridge.exposeInMainWorld("appConfig", {
+  getConfig: () => {
+    console.log(123)
+  }
+})

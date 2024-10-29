@@ -12,7 +12,7 @@
   </div>
 </template>
 
-<script setup lang=ts>
+<script setup lang="ts">
 const items = ref([
   {
     key: "home",

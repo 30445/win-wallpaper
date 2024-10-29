@@ -17,7 +17,7 @@ export const ipcSend = (...args: Parameters<typeof ipcRenderer.send>) => {
 
 export const ipcInvoke = (...args: Parameters<typeof ipcRenderer.invoke>) => {
   const [channel, ...omit] = args
-  return ipcRenderer.invoke(channel, ...om)
+  return ipcRenderer.invoke(channel, ...omit)
 }
 
 export const ipcOnce = (...args: Parameters<typeof ipcRenderer.once>) => {

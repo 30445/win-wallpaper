@@ -2,7 +2,7 @@
   <div class="static">静态壁纸</div>
 </template>
 
-<script setup lang=ts>
+<script setup lang="ts">
 
 </script>
 

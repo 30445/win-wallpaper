@@ -23,5 +23,19 @@ declare namespace NodeJS {
 
 // Used in Renderer process, expose in `preload.ts`
 interface Window {
-  ipcRenderer: import('electron').IpcRenderer
+  ipcRenderer: import('electron').IpcRenderer,
+  appConfig: {
+    getConfig: () => {}
+  }
 }
+
+
+declare global {
+  namespace MyGlobal {
+    var allWindows: {
+      [key: string]: Electron.BrowserWindow
+    }
+  }
+}
+
+declare var global: typeof MyGlobal
