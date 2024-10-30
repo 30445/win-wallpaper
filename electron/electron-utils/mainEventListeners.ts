@@ -2,7 +2,6 @@ import {BrowserWindow, ipcMain, screen} from "electron";
 import {createNewWindow, openSelectorFile} from "./utils.ts"
 import path from "node:path";
 import {exec} from "child_process";
-import * as fs from "fs";
 import process from "process";
 
 export default (win: BrowserWindow) => {
@@ -54,7 +53,7 @@ const createWallpaperWindow = (x: number, y: number, w: number, h: number) => {
 
 function setWallpaperLayer(win: BrowserWindow) {
   const hwnd = win.getNativeWindowHandle().readInt32LE(0)
-  const command = `powershell -ExecutionPolicy Bypass -File "${path.join(process.env.VITE_PUBLIC, "set-window-pos.ps1")}" -myAppHwnd ${hwnd}`
+  const command = `powershell -ExecutionPolicy Bypass -File "${path.join(process.env.VITE_PUBLIC, "set-window-pos_2.ps1")}" -myAppHwnd ${hwnd}`
   exec(command, (error, stdout, stderr) => {
     if (error) {
       console.error(error)
